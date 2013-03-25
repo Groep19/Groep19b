@@ -19,7 +19,7 @@
         <p>Test Ruben </p>
         <p>Test Robin</p>
         <p>Test Tim</p>
-        <p>Test Groep 19</p>
+        <p>Test Groep19</p>
         <p>Git Werkt</p>
     </body>
 </html>
