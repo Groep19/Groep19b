@@ -14,12 +14,12 @@
     </head>
     <body>
         <h1>Hello World!</h1>
-        <p>Git Test</p>
-        <p> Ruben Thonissen </p>
-        <p>robin</p>
-        <p>TEST GIT VAN THUIS UIT
-        TIM IS DE MAN DIE ALLES KAN</p>
-        
-        
+        <p>Test Sven</p>
+        <p>Test Maikel</p>
+        <p>Test Ruben </p>
+        <p>Test Robin</p>
+        <p>Test Tim</p>
+        <p>Test Groep 19</p>
+        <p>Git Werkt</p>
     </body>
 </html>
