@@ -31,7 +31,7 @@
 
 header {height:112px; position:relative; margin-bottom:5px;}
 	header .logo {font-size:2.5em; height:100px; padding-top:28px; font-weight:700; text-shadow:1px 1px 2px #000; color:#fff; filter: Shadow(Color=#666666, Direction=135, Strength=3);}
-	header .statement {width:20%; text-align:right; padding-top:30px;}
+	header .statement {width:20%; text-align:right; padding-top:100px;}
 header nav { background-color:#525252; color:#fff; height:30px;}
 	nav ul {list-style:none;}
 	nav ul li {float:left; margin-left:5px;}
