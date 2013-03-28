@@ -44,6 +44,19 @@ aside {min-height:525px;}
 
 footer { font-size:.8em; } 
 </style>
+
+<script language="JavaScript1.1">
+<!--
+var image1=new Image()
+image1.src="Afbeeldingen/festival1.jpg"
+var image2=new Image()
+image2.src="Afbeeldingen/festival2.jpg"
+var image3=new Image()
+image3.src="Afbeeldingen/festival3.jpg"
+//-->
+</script>
+
+
 </head>
 <body>
 <div class="row">
@@ -67,7 +80,31 @@ footer { font-size:.8em; }
     </header>
     <div class="clear"></div>
     <aside class="col_4 col box_shadow shadow">
-        <p style="padding:5px;"></p> <%-- Hiertussen komt de tekst voor in de box links in het scherm te zetten. --%>
+        <p style="padding:5px;">
+            <img src="Afbeeldingen/festival1.jpg" name="slide" width=225 height=400>
+                    <script>
+                    <!--
+                    //variable that will increment through the images
+                    var step=1
+                    function slideit(){
+                    //if browser does not support the image object, exit.
+                    if (!document.images)
+                    return
+                    document.images.slide.src=eval("image"+step+".src")
+                    if (step<3)
+                    step++
+                    else
+                    step=1
+                    //call function "slideit()" every 2.5 seconds
+                    setTimeout("slideit()",5000)
+                    }
+                    slideit()
+                    //-->
+                    </script>
+            
+            
+            
+        </p> <%-- Hiertussen komt de tekst voor in de box links in het scherm te zetten. --%>
     </aside>
     
     <div class="content col_12 col">
