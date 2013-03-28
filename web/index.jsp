@@ -43,7 +43,7 @@ aside {min-height:525px;}
 footer { font-size:.8em; } 
 </style>
 </head>
-<body  onload="draw();">
+<body>
 <div class="row">
     <header>
         <div class="logo left">52framework</div>
