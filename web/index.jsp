@@ -29,15 +29,15 @@
 .logo, h1, h2, h3, h4, h5 { font-family: 'Yanone Kaffeesatz', arial, serif; }
 
 
-header {height:112px; position:relative; margin-bottom:5px;}
+header {height:200px; position:relative; margin-bottom:5px;}
 	header .logo {font-size:2.5em; height:100px; padding-top:28px; font-weight:700; text-shadow:1px 1px 2px #000; color:#fff; filter: Shadow(Color=#666666, Direction=135, Strength=3);}
 	header .statement {width:20%; text-align:right; padding-top:100px;}
-header nav { background-color:#525252; color:#fff; height:30px;}
+header nav { background-color:#4B88BE; color:#fff; height:30px;}
 	nav ul {list-style:none;}
 	nav ul li {float:left; margin-left:5px;}
 	nav ul li a {display:block; color:#fff; text-decoration:none; padding:2px 8px; margin-top:8px;  
 					-moz-border-radius-topleft: 5px; -webkit-border-top-left-radius: 5px; -moz-border-radius-topright: 5px; -webkit-border-top-right-radius: 5px;}
-	nav ul li a:hover, nav ul li.active a {background-color:#fff; color:#000;}
+	nav ul li a:hover, nav ul li.active a {background-color:#EB5A1E; color:#000;}
 aside {min-height:525px;}	
 
 footer { font-size:.8em; } 
