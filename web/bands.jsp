@@ -16,7 +16,6 @@
 <script src="js/modernizr-1.1.min.js"></script><!-- this is the javascript allowing html5 to run in older browsers -->
 
 
-<link rel="stylesheet" type="text/css" href="css/reset.css" media="screen" title="html5doctor.com Reset Stylesheet" />
 <link rel="stylesheet" type="text/css" href="css/css3.css" media="screen" />
 <link rel="stylesheet" type="text/css" href="css/general.css" media="screen" />
 <link rel="stylesheet" type="text/css" href="css/grid.css" media="screen" />
