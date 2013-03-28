@@ -46,9 +46,9 @@ footer { font-size:.8em; }
 <body>
 <div class="row">
     <header>
-        <div class="logo left">52framework</div>
+        <div class="logo left">Groep 19 Logo</div>
         
-        <div class="statement right">The framework from the future!</div>
+        <div class="statement right">Groep 19.</div>
         
         <div class="clear"></div>
         
@@ -63,39 +63,25 @@ footer { font-size:.8em; }
     </header>
     <div class="clear"></div>
     <aside class="col_4 col box_shadow shadow">
-    	<p style="padding:5px;">orem ipsum link one  dolor sit amet, consectetur adipiscing elit. Nullam a purus ac est dapibus feugiat eu eget nulla. Sed molestie feugiat viverra. Pellentesque consectetur, leo in faucibus congue, elit purus bibendum tellus, non tincidunt tortor mauris in sem. Suspendisse sodales metus eget sem suscipit eleifend. Proin porttitor, ante vel egestas pretium, nulla eros mollis eros, dapibus molestie lacus mi at sapien. Fusce risus risus, vulputate vel bibendum nec, accumsan non lacus.Fusce viverra mollis sapien non mattis. Suspendisse id est sapien. Aliquam quis tellus sed lorem fermentum rutrum in eget urna. Mauris ac dolor sit amet tellus tristique eleifend. Morbi venenatis ultricies eleifen</p>
+        <p style="padding:5px;"></p> <%-- Hiertussen komt de tekst voor in de box links in het scherm te zetten. --%>
     </aside>
     
     <div class="content col_12 col">
         <article>
-            <h1>CSS3 Page</h1>
-            <blockquote class="right">CSS3 is still not widely supported, so remember to check in all browsers!</blockquote>
-            <p>This page shows off some of the cool CSS3 features this framework helps you use.</p>
+            <h1>Titel</h1>
+            <p>Hier komt de tekst over het onderwerp.</p>
         </article>  
-        <article>
-            <div class="shadows">
-            	<h4>Shadows</h3>
-                <p>
-                	<span class="shadow">This text has a gray shadow</span>
-                </p>
-                <h4>Rounded Corners and Shadows</h3>
-                <p class="rounded" style="width:180px; padding:4px;">This has rounded corners</p>
-                <p class="rounded_top_right box_shadow" style="width:250px; padding:4px;">This has the top right coruner rounded only!</p>
-                <h4>Rotation and Animation</h4>
-                <p class="rotate" style="width:80px; height:50px; border:1px solid #ccc; padding:5px; margin-left:15px;">Rotated Paragraph</p>				
-                <button class="gradient">Gradient Demo</button>
-                <h3>This font can be used on any page, it uses @font-face which is supported by 97% of browsers. Find more fonts like this one here: http://www.fontsquirrel.com/ http://typekit.com/ http://code.google.com/webfonts</h3>
-            </div>
-        </article>
-  </div><!-- end content -->
+    </div><!-- end content -->
+    
+    
   <div class="clear" style="height:10px; border-bottom:1px solid #ccc;"></div>
 </div><!-- end wrap -->
 <footer class="row">
     <section class="col_8 col align_left">
-    All rights reserved 52framework owned by <a href="http://enavu.com">enavu network</a>
+   Footer links
     </section>
     <section class="col_8 col align_right">
-    Have questions? Contact me at angel@enavu.com | Even if it's just to say thanks!
+    Footer rechts
     </section>
 </footer>
 </body>
