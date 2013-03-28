@@ -58,8 +58,6 @@ footer { font-size:.8em; }
                 <li class="active"><a href="css3.html">Festival</a></li>
                 <li><a href="canvas.html">Bands</a></li>
                 <li><a href="http://52framework.com/documentation">Locatie</a></li>
-                <li><a href="http://52framework.com/about">About</a></li>
-                <li><a href="http://enavu.com">enavu</a></li>
             </ul>
         </nav>
     </header>
