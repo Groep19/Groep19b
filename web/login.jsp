@@ -41,6 +41,12 @@ header nav { background-color:#EB5A1E; color:#fff; height:28px;   }
 aside {min-height:400px;}	
 
 footer { font-size:.8em; } 
+
+button {
+  color: #fff;
+  background-color: #EB5A1E;
+  font-weight: bold;
+}
 </style>
 
 <script language="JavaScript1.1">
@@ -120,7 +126,7 @@ image3.src="Afbeeldingen/festival3.jpg"
                     <label for="pwd">Wachtwoord:</label>
                 <input type="password" name="pwd" required="required" class="box_shadow">
               </div>
-                <input type="submit" value="Inloggen">
+                <button type="submit" value="Inloggen">Inloggen</button>
                 </fieldset>
             </form>
         </article>  
