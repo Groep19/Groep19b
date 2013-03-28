@@ -12,6 +12,13 @@
         <title>JSP Page</title>
     </head>
     <body>
-
+        <h1>Hello World!</h1>
+        <p>Test Sven</p>
+        <p>Test Maikel</p>
+        <p>Test Ruben </p>
+        <p>Test Robin</p>
+        <p>Test Tim</p>
+        <p>Test Groep19</p>
+        <p>Git Werkt</p>
     </body>
 </html>
