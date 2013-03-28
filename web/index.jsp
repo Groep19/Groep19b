@@ -10,12 +10,8 @@
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>JSP Page</title>
-    <p> Test </p>
     </head>
     <body>
-        <h1>Hello World!</h1>
-        <p>Git Test</p>
-        <p> Ruben Thonissen </p>
-        <p>robin</p>
+
     </body>
 </html>
