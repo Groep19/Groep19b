@@ -26,18 +26,20 @@
 
 <style>
 /* Feel free to remove these styles, they are for demo page */
-.logo, h1, h2, h3, h4, h5 { font-family: 'Yanone Kaffeesatz', arial, serif; }
+.logo, h1, h2, h3, h4, h5, header { font-family: 'Yanone Kaffeesatz', arial, serif; font-size: large; }
 
 
-header {height:200px; position:relative; margin-bottom:5px;}
-	header .logo {font-size:2.5em; height:100px; padding-top:28px; font-weight:700; text-shadow:1px 1px 2px #000; color:#fff; filter: Shadow(Color=#666666, Direction=135, Strength=3);}
+header {height:175px; position:relative; margin-bottom:10px; border-bottom:#4B88BE; border-bottom-style: solid; border-bottom-width: 8px;}
+	header .logo {font-size:5em; height:100px; padding-top:22px; font-weight:700; text-shadow:5px 5px 10px #4B88BE; color:#EB5A1E; filter: Shadow(Color=#4B88BE, Direction=135, Strength=13);}
 	header .statement {width:20%; text-align:right; padding-top:100px;}
-header nav { background-color:#4B88BE; color:#fff; height:30px;}
+header nav { background-color:#EB5A1E; color:#fff; height:25px;   }
 	nav ul {list-style:none;}
 	nav ul li {float:left; margin-left:5px;}
-	nav ul li a {display:block; color:#fff; text-decoration:none; padding:2px 8px; margin-top:8px;  
+	nav ul li a {display:block; color:#fff; text-decoration:none; padding:2px 8px; margin-top:3px;  
 					-moz-border-radius-topleft: 5px; -webkit-border-top-left-radius: 5px; -moz-border-radius-topright: 5px; -webkit-border-top-right-radius: 5px;}
-	nav ul li a:hover, nav ul li.active a {background-color:#EB5A1E; color:#000;}
+	nav ul li a:hover, nav ul li.active a {background-color:#4B88BE; color:#000;}
+
+
 aside {min-height:525px;}	
 
 footer { font-size:.8em; } 
@@ -46,7 +48,9 @@ footer { font-size:.8em; }
 <body>
 <div class="row">
     <header>
-        <div class="logo left"><img src="Afbeeldingen/logo2.PNG" align="left"> </div>
+        <div class="logo left"><img src="Afbeeldingen/logo2b.PNG" align="left">
+           Festivals
+        </div>
         
         <div class="statement right"><button type="button"><a href="#">Log In</a></button></div>
         
