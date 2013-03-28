@@ -10,7 +10,7 @@
 <html lang="en">
 <head>
 <meta charset=utf-8>
-<title>52Framework -- brought to you by the enavu network - Angel Grablev</title>
+<title>FestivalSite Groep 19</title>
 <meta name="keywords" content="keywords, here" />
 <meta name="description" content="your description here" />
 
@@ -32,15 +32,15 @@
 header {height:175px; position:relative; margin-bottom:10px; border-bottom:#4B88BE; border-bottom-style: solid; border-bottom-width: 8px;}
 	header .logo {font-size:5em; height:100px; padding-top:22px; font-weight:700; text-shadow:5px 5px 10px #4B88BE; color:#EB5A1E; filter: Shadow(Color=#4B88BE, Direction=135, Strength=13);}
 	header .statement {width:20%; text-align:right; padding-top:100px;}
-header nav { background-color:#EB5A1E; color:#fff; height:25px;   }
+header nav { background-color:#EB5A1E; color:#fff; height:28px;   }
 	nav ul {list-style:none;}
 	nav ul li {float:left; margin-left:5px;}
 	nav ul li a {display:block; color:#fff; text-decoration:none; padding:2px 8px; margin-top:3px;  
 					-moz-border-radius-topleft: 5px; -webkit-border-top-left-radius: 5px; -moz-border-radius-topright: 5px; -webkit-border-top-right-radius: 5px;}
 	nav ul li a:hover, nav ul li.active a {background-color:#4B88BE; color:#000;}
+        logonknop {float: right; margin-right: 5px;}        
 
-
-aside {min-height:525px;}	
+aside {min-height:400px;}	
 
 footer { font-size:.8em; } 
 </style>
@@ -62,10 +62,9 @@ image3.src="Afbeeldingen/festival3.jpg"
 <div class="row">
     <header>
         <div class="logo left"><img src="Afbeeldingen/logo2b.PNG" align="left">
-           Festivals
+             Festivals
         </div>
-        
-        <div class="statement right"><button type="button"><a href="#">Log In</a></button></div>
+      
         
         <div class="clear"></div>
         
@@ -75,7 +74,9 @@ image3.src="Afbeeldingen/festival3.jpg"
                 <li><a href="#">Festival</a></li>
                 <li><a href="#">Bands</a></li>
                 <li><a href="#">Locatie</a></li>
+                <logonknop><li><a href="./login.jsp">Login</a></li></logonknop>
             </ul>
+            
         </nav>
     </header>
     <div class="clear"></div>
