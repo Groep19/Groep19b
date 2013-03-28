@@ -83,7 +83,7 @@ image3.src="Afbeeldingen/festival3.jpg"
     <div class="clear"></div>
     <aside class="col_4 col box_shadow shadow">
         <p style="padding:5px;">
-            <img src="Afbeeldingen/festival1.jpg" name="slide" width=225 height=400>
+            <img src="Afbeeldingen/festival1.jpg" name="slide" width=210 height=400>
                     <script>
                     <!--
                     //variable that will increment through the images
