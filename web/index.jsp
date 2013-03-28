@@ -70,8 +70,8 @@ image3.src="Afbeeldingen/festival3.jpg"
         
         <nav>
         	<ul>
-            	<li class="active"><a href="/">Home</a></li>
-                <li><a href="./festival.jsp">Festival</a></li>
+            	<li class="active"><a href="./index.jsp">Home</a></li>
+                <li><a href="./festivals.jsp">Festival</a></li>
                 <li><a href="./bands.jsp">Bands</a></li>
                 <li><a href="./locatie.jsp">Locatie</a></li>
                 <logonknop><li><a href="./login.jsp">Login</a></li></logonknop>
