@@ -46,18 +46,18 @@ footer { font-size:.8em; }
 <body>
 <div class="row">
     <header>
-        <div class="logo left">Groep 19 Logo</div>
+        <div class="logo left"><img src="Afbeeldingen/logo2.PNG" align="left"> </div>
         
-        <div class="statement right">Groep 19.</div>
+        <div class="statement right"><button type="button"><a href="#">Log In</a></button></div>
         
         <div class="clear"></div>
         
         <nav>
         	<ul>
-            	<li><a href="/">Home</a></li>
-                <li class="active"><a href="css3.html">Festival</a></li>
-                <li><a href="canvas.html">Bands</a></li>
-                <li><a href="http://52framework.com/documentation">Locatie</a></li>
+            	<li class="active"><a href="/">Home</a></li>
+                <li><a href="#">Festival</a></li>
+                <li><a href="#">Bands</a></li>
+                <li><a href="#">Locatie</a></li>
             </ul>
         </nav>
     </header>
@@ -81,7 +81,7 @@ footer { font-size:.8em; }
    Footer links
     </section>
     <section class="col_8 col align_right">
-    Footer rechts
+    Groep 19 : Maikel Vanmuysen, Tim Telen, Sven Haenen, Ruben Thonissen, Robin Verdingh
     </section>
 </footer>
 </body>
