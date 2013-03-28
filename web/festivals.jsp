@@ -1,9 +1,12 @@
 <%-- 
-    Document   : festivals
-    Created on : Mar 28, 2013, 2:17:13 PM
-    Author     : Maikel
+    Document   : index
+    Created on : Mar 21, 2013, 3:52:33 PM
+    Author     : Maikel Vanmuysen, Tim Telen, Sven Haenen, Ruben Thonissen, Robin Verdingh
+               : Project Groep 19
 --%>
 
+
+<%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html lang="en">
 <head>
