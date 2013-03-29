@@ -6,6 +6,7 @@
 --%>
 
 
+<%@page import="connectie.Festivals"%>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -73,53 +74,19 @@ footer { font-size:.8em; }
         <article>
               <%@page import="java.sql.*"%>
         <%
-        Connection conn=null;
-      String driver = "com.mysql.jdbc.Driver";
-  String url="jdbc:mysql://localhost:3306";
-  String dbName ="/groep19_festivals";
-  String userName="root";
-  String password="";
-  try{
-      Class.forName(driver).newInstance();
-      String geb_naam = request.getParameter("geb_naam");
-      String pwd = request.getParameter("pwd");
-    
-      
-      conn = DriverManager.getConnection(url+dbName, userName, password);
-      Statement stmt = conn.createStatement();
-      ResultSet rs= stmt.executeQuery("SELECT gebr_naam,gebr_paswoord from geregistreerdegebruikers WHERE gebr_naam='" + geb_naam + "' AND gebr_paswoord = '" + pwd + "'");
- int count = 0;
- while (rs.next()){
-     count++;
- }
- System.out.println(count);
- if (count == 1){
-
-  response.sendRedirect("index.jsp");
-     
- }
-
-     
- 
-     
-     
- 
-     rs.close();
-     stmt.close();
-     conn.close();
-   
-     
-    
-  
-    
-    
-  }catch(Exception e){
-      System.out.println("fout " + e.getMessage());
-  }
-  
-  
-  
-    %>
+           String geb_naam = request.getParameter("geb_naam");
+           String geb_paswoord = request.getParameter("pwd");
+           int resultaat;
+          Festivals f = new Festivals();
+          resultaat = f.ophalenGebruikers(geb_naam, geb_paswoord);
+          f.close();
+          if (resultaat == 1){
+              response.sendRedirect("index.jsp"); //redirect naar admin gedeelte. Tijdelijke verwijzing naar index pagina
+          }else{
+            response.sendRedirect("login.jsp");
+          }
+          
+       %>
         </article>  
     </div><!-- end content -->
     
