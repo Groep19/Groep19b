@@ -1,10 +1,9 @@
 <%-- 
-    Document   : bands
-    Created on : Mar 28, 2013, 9:50:49 AM
-     Author     : Maikel Vanmuysen, Tim Telen, Sven Haenen, Ruben Thonissen, Robin Verdingh
+    Document   : index
+    Created on : Mar 21, 2013, 3:52:33 PM
+    Author     : Maikel Vanmuysen, Tim Telen, Sven Haenen, Ruben Thonissen, Robin Verdingh
                : Project Groep 19
 --%>
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -70,8 +69,8 @@ image3.src="Afbeeldingen/festival3.jpg"
         	<ul>
             	<li><a href="./index.jsp">Home</a></li>
                 <li><a href="./festivals.jsp">Festival</a></li>
-                <li class="active"><a href="./bands.jsp">Bands</a></li>
-                <li><a href="./locatie.jsp">Locatie</a></li>
+                <li><a href="./bands.jsp">Bands</a></li>
+                <li class="active"><a href="./locatie.jsp">Locatie</a></li>
                 <logonknop><li><a href="./login.jsp">Login</a></li></logonknop>
             </ul>
             
@@ -108,23 +107,23 @@ image3.src="Afbeeldingen/festival3.jpg"
     
     <div class="content col_12 col">
         <article>
-            <h1>Bands</h1>
-            <a href="./bandinfo.jsp"><img src="./Afbeeldingen/LogoEminem.gif" border="2" style="border:2px solid black;width:200px;height:200px" alt="Eminem"/></a>
-            <a href="./bandinfo.jsp"><img src="./Afbeeldingen/LogoFoofighters.jpg" border="2" style="border:2px solid black;width:200px;height:200px;" alt="Foo Fighters"/></a>
-            <a href="./bandinfo.jsp"><img src="./Afbeeldingen/LogoDadaLife.jpg" border="2" style="border:2px solid black;width:200px;height:200px;" alt="Dada life"/></a>
-            <a href="./bandinfo.jsp"><img src="./Afbeeldingen/LogoMetallica.gif" border="2" style="border:2px solid black;width:200px;height:200px;" alt="Metallica"/></a>
-            <a href="./bandinfo.jsp"><img src="./Afbeeldingen/LogoNetsky.jpg" border="2" style="border:2px solid black;width:200px;height:200px;" alt="Netsky"/></a>
-          
-            <p></p>
+            <h1>Titel</h1>
+         
+            
+            
+            
         </article>  
     </div><!-- end content -->
+    
+    
+    
     
     
   <div class="clear" style="height:10px; border-bottom:1px solid #ccc;"></div>
 </div><!-- end wrap -->
 <footer class="row">
     <section class="col_8 col align_left">
-   
+   Footer links
     </section>
     <section class="col_8 col align_right">
     Groep 19 : Maikel Vanmuysen, Tim Telen, Sven Haenen, Ruben Thonissen, Robin Verdingh
