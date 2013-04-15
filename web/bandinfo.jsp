@@ -69,8 +69,8 @@ image3.src="Afbeeldingen/festival3.jpg"
         	<ul>
             	<li><a href="./index.jsp">Home</a></li>
                 <li><a href="./festivals.jsp">Festival</a></li>
-                <li><a href="./bands.jsp">Bands</a></li>
-                <li class="active"><a href="./locatie.jsp">Locatie</a></li>
+                <li class="active"><a href="./bands.jsp">Bands</a></li>
+                <li><a href="./locatie.jsp">Locatie</a></li>
                 <logonknop><li><a href="./login.jsp">Login</a></li></logonknop>
             </ul>
             
@@ -107,11 +107,52 @@ image3.src="Afbeeldingen/festival3.jpg"
     
     <div class="content col_12 col">
         <article>
-            <h1>Titel</h1>
+            <h1><%=request.getParameter("band_naam")%></h1>
          
             
-            
-            
+         <%--   <%=request.getParameter("band_naam")%> --%>
+                          <%@page import="java.sql.*"%>
+        <%
+        Connection conn=null;
+      String driver = "com.mysql.jdbc.Driver";
+  String url="jdbc:mysql://localhost:3306";
+  String dbName ="/groep19_festivals";
+  String userName="root";
+  String password="";
+  try{
+      Class.forName(driver).newInstance();
+      String band_naam = request.getParameter("band_naam");
+
+      conn = DriverManager.getConnection(url+dbName, userName, password);
+      Statement stmt = conn.createStatement();
+       ResultSet rs= stmt.executeQuery("SELECT * from bands WHERE band_naam='" + band_naam + "'");
+ int count = 0;
+ 
+ while (rs.next()){
+     count++;
+ }
+ System.out.println(count);
+
+  
+     
+     
+ 
+     rs.close();
+     stmt.close();
+     conn.close();
+   
+     
+    
+  
+    
+    
+  }catch(Exception e){
+      System.out.println("fout " + e.getMessage());
+  }
+  
+  
+  
+    %> 
         </article>  
     </div><!-- end content -->
     
