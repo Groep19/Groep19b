@@ -115,18 +115,18 @@ image3.src="Afbeeldingen/festival3.jpg"
             
          <%--   <%=request.getParameter("band_naam")%> --%>
                           <%@page import="java.util.List"%>
-                          <%@page import="connectie.Festivals"%>
+                          <%@page import="connectie.Connectie"%>
                           <%@page import="connectie.Bands"%>
         <%
        Bands b = new Bands();
        List < Bands > resultaat;
-       Festivals festivals = new Festivals();
+       Connectie connectie = new Connectie();
        try{
-       resultaat = festivals.ophalenBands(request.getParameter("band_naam"));
+       resultaat = connectie.ophalenBands(request.getParameter("band_naam"));
        
        out.print("Muziekgenre: " + resultaat.get(0).getBand_soortMuziek());
        out.print("</br>");
-     out.print("Website: ");
+     out.print("Website: &#09; test");
      
       
        %> <a href="<%resultaat.get(0).getBand_url();%>"><%out.print(resultaat.get(0).getBand_url());%> </a>
