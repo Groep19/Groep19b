@@ -109,10 +109,19 @@ image3.src="Afbeeldingen/festival3.jpg"
     
     <div class="content col_12 col">
         <article>
-            <form name="podia" action="adminVerwerk.jsp">
-                Omschrijving: <input type="text" name="omschrijving" value="" /><br/>
-                Locatie: <input type="text" name="locatie" value="" /><br/>
-                <input type="submit" value="toevoegen" name="toevoegen" />
+            <h1>Beheer bands</h1>
+            <form name="bands" action="adminVerwerk.jsp">
+                
+                    Naam:
+                    <input type="text" name="naam" value="" /><br/>
+                    Genre:
+                    <input type="text" name="genre" value="" /><br/>
+               
+                    Website:
+                   <input type="text" name="website" value="" /><br/>
+                   <input type="submit" value="<" name="vorige" />
+                  <input type="submit" value=">" name="volgende" /><br/>
+                 <input type="submit" value="toevoegen" name="toevoegen" />
                 <input type="submit" value="wijzigen" name="wijzigen" />
                 <input type="submit" value="verwijderen" name="verwijderen" />
             </form>
