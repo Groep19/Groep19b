@@ -26,6 +26,7 @@ public class Festivals
 
    private Connection connection = null; // manages connection
    private PreparedStatement ophalenGebruikers = null; 
+   private PreparedStatement ophalenBands = null;
    
    // constructor
    public Festivals()
@@ -38,6 +39,9 @@ public class Festivals
          // create query that selects all entries in the AddressBook
          ophalenGebruikers = 
             connection.prepareStatement( "SELECT gebr_naam, gebr_paswoord from geregistreerdegebruikers where gebr_naam = ? and gebr_paswoord = ?" );
+         
+         ophalenBands = 
+            connection.prepareStatement ("SELECT * from bands where band_naam = ?");
                       		 
       } // end try
       catch ( SQLException sqlException )
@@ -85,6 +89,51 @@ public class Festivals
       
     return count;
    } 
+   
+   public List < Bands > ophalenBands(String band_naam) throws Exception{
+       
+       List< Bands > results = null;
+       ResultSet resultSet = null;
+        
+      try 
+      {
+         // executeQuery returns ResultSet containing matching entries
+          ophalenBands.setString(1, band_naam);
+         resultSet = ophalenBands.executeQuery(); 
+           
+         results = new ArrayList< Bands >();
+         
+         while ( resultSet.next() )
+         {
+            results.add ( new Bands(
+                    resultSet.getInt("band_id"),
+                    resultSet.getString("band_naam"),
+                    resultSet.getString("band_soortMuziek"),
+                    resultSet.getString("band_url")));
+               
+         } // end while
+      } // end try
+      catch ( SQLException sqlException )
+      {
+         sqlException.printStackTrace();         
+         throw sqlException;
+      } // end catch
+      finally
+      {
+         try 
+         {
+            resultSet.close();
+         } // end try
+         catch ( SQLException sqlException )
+         {
+            sqlException.printStackTrace();         
+            close();
+            throw sqlException;
+         } // end catch
+      } // end finally
+      
+    return results;
+   }
   
    // close the database connection
    public void close()
