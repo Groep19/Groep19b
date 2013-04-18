@@ -44,13 +44,14 @@ public class Connectie
          
          ophalenBands = 
             connection.prepareStatement ("SELECT * from bands where band_naam = ?");
-         ophalenAlleBands = 
-                 connection.prepareStatement("SELECT * from bands ");
-                      		 
+                      		
+         ophalenAlleFestivals = 
+            connection.prepareStatement ( "SELECT fest_id, fest_naam, fest_locatie, fest_datum , fest_duur FROM festivals");
+         
       } // end try
       catch ( SQLException sqlException )
       {
-         sqlException.printStackTrace();
+         System.out.println(sqlException.getMessage());
          System.exit( 1 );
       } // end catch
    } // end PersonQueries constructor
@@ -138,26 +139,29 @@ public class Connectie
       
     return results;
    }
-   public List < Bands > ophalenAlleBands() throws Exception{
-       
-       List< Bands > results = null;
+   
+   public List < Festivals > ophalenAlleFestivals() throws Exception{
+        List < Festivals > results = null;
        ResultSet resultSet = null;
-        
+               
       try 
       {
          // executeQuery returns ResultSet containing matching entries
-        
-         resultSet = ophalenAlleBands.executeQuery(); 
+         
+         resultSet = ophalenAlleFestivals.executeQuery(); 
            
-         results = new ArrayList< Bands >();
+         results = new ArrayList< Festivals >();
          
          while ( resultSet.next() )
          {
-            results.add ( new Bands(
-                    resultSet.getInt("band_id"),
-                    resultSet.getString("band_naam"),
-                    resultSet.getString("band_soortMuziek"),
-                    resultSet.getString("band_url")));
+            results.add ( new Festivals(
+                   resultSet.getInt("fest_id"),
+                    resultSet.getString("fest_naam"),
+                   resultSet.getString("fest_locatie"),
+                    resultSet.getDate("fest_datum"),
+                   resultSet.getInt("fest_duur")));
+                   
+                   
                
          } // end while
       } // end try
@@ -181,7 +185,9 @@ public class Connectie
       } // end finally
       
     return results;
-   }
+       
+       
+   } 
   
    // close the database connection
    public void close()
