@@ -115,7 +115,14 @@ image3.src="Afbeeldingen/festival3.jpg"
              <%@page import="java.util.List"%>
              <%@page import="connectie.Connectie"%>
              <%@page import="connectie.Festivals"%>
-             
+             <table>
+                 <tr>
+                     <td width=20"><b><u>ID</u></b></td>
+                     <td width=200"><b><u>Naam</u></b></td>
+                     <td width=200"><b><u>Locatie</u></b></td>
+                     <td width=100"><b><u>Datum</u></b></td>
+                     <td width=20"><b><u>Duur</u></b></td>          
+                 </tr>
             <%
             List < Festivals > resultaat;
             
@@ -124,13 +131,13 @@ image3.src="Afbeeldingen/festival3.jpg"
             try{
                 resultaat = connectie.ophalenAlleFestivals();
                 for (int i=0;i<resultaat.size();i++){
-                
-                out.println(resultaat.get(i).getFest_id());
-                out.println(resultaat.get(i).getFest_naam());
-                out.println(resultaat.get(i).getFest_locatie());
-                out.println(resultaat.get(i).getFest_datum());
-                out.println(resultaat.get(i).getFest_duur());
-                %></br><%
+                %><tr> <%
+                %><td><%out.println(resultaat.get(i).getFest_id());%></td><%
+                %><td><%out.println(resultaat.get(i).getFest_naam());%></td><%
+                %><td><%out.println(resultaat.get(i).getFest_locatie());%></td><%
+                %><td><%out.println(resultaat.get(i).getFest_datum());%></td><%
+                %><td><%out.println(resultaat.get(i).getFest_duur());%></td><%
+                %></tr><%
                                }
                
                 
@@ -151,6 +158,7 @@ image3.src="Afbeeldingen/festival3.jpg"
             
             
             %>
+             </table>
         </article>  
     </div><!-- end content -->
     
