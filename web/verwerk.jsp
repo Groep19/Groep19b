@@ -6,7 +6,7 @@
 --%>
 
 
-<%@page import="connectie.Festivals"%>
+<%@page import="connectie.Connectie"%>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -77,7 +77,7 @@ footer { font-size:.8em; }
            String geb_naam = request.getParameter("geb_naam");
            String geb_paswoord = request.getParameter("pwd");
            int resultaat;
-          Festivals f = new Festivals();
+          Connectie f = new Connectie();
           resultaat = f.ophalenGebruikers(geb_naam, geb_paswoord);
           f.close();
           if (resultaat == 1){
