@@ -4,6 +4,8 @@
     Author     : Maikel Vanmuysen, Tim Telen, Sven Haenen, Ruben Thonissen, Robin Verdingh
                : Project Groep 19
 --%>
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -111,48 +113,37 @@ image3.src="Afbeeldingen/festival3.jpg"
          
             
          <%--   <%=request.getParameter("band_naam")%> --%>
-                          <%@page import="java.sql.*"%>
+                          <%@page import="java.util.List"%>
+                          <%@page import="connectie.Festivals"%>
+                          <%@page import="connectie.Bands"%>
         <%
-        Connection conn=null;
-      String driver = "com.mysql.jdbc.Driver";
-  String url="jdbc:mysql://localhost:3306";
-  String dbName ="/groep19_festivals";
-  String userName="root";
-  String password="";
-  try{
-      Class.forName(driver).newInstance();
-      String band_naam = request.getParameter("band_naam");
-
-      conn = DriverManager.getConnection(url+dbName, userName, password);
-      Statement stmt = conn.createStatement();
-       ResultSet rs= stmt.executeQuery("SELECT * from bands WHERE band_naam='" + band_naam + "'");
- int count = 0;
- 
- while (rs.next()){
-     count++;
- }
- System.out.println(count);
-
-  
+       Bands b = new Bands();
+       List < Bands > resultaat;
+       Festivals festivals = new Festivals();
+       try{
+       resultaat = festivals.ophalenBands(request.getParameter("band_naam"));
+       
+       out.print("Muziekgenre: " + resultaat.get(0).getBand_soortMuziek());
+       out.print("</br>");
+     out.print("Website: ");
      
-     
- 
-     rs.close();
-     stmt.close();
-     conn.close();
-   
-     
+      
+       %> <a href="<%resultaat.get(0).getBand_url();%>"><%out.print(resultaat.get(0).getBand_url());%> </a>
+       <%
+       
+             }
+       catch(Exception e){
+       StackTraceElement [] a = e.getStackTrace();
+       for(int i =0;i<a.length; i++){
+       out.print(a[i]);
+       
+       }
+       
+       }
+        
+        %>
+        
     
-  
-    
-    
-  }catch(Exception e){
-      System.out.println("fout " + e.getMessage());
-  }
-  
-  
-  
-    %> 
         </article>  
     </div><!-- end content -->
     
