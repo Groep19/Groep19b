@@ -126,6 +126,8 @@ image3.src="Afbeeldingen/festival3.jpg"
                 <input type="password" name="pwd" required="required" class="box_shadow">
               </div>
                 <button type="submit" value="Inloggen">Inloggen</button>
+                
+              
                 </fieldset>
             </form>
         </article>  
