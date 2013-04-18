@@ -27,6 +27,8 @@ public class Connectie
    private Connection connection = null; // manages connection
    private PreparedStatement ophalenGebruikers = null; 
    private PreparedStatement ophalenBands = null;
+   private PreparedStatement ophalenAlleBands = null;
+   
    
    // constructor
    public Connectie()
@@ -42,6 +44,8 @@ public class Connectie
          
          ophalenBands = 
             connection.prepareStatement ("SELECT * from bands where band_naam = ?");
+         ophalenAlleBands = 
+                 connection.prepareStatement("SELECT * from bands ");
                       		 
       } // end try
       catch ( SQLException sqlException )
@@ -100,6 +104,50 @@ public class Connectie
          // executeQuery returns ResultSet containing matching entries
           ophalenBands.setString(1, band_naam);
          resultSet = ophalenBands.executeQuery(); 
+           
+         results = new ArrayList< Bands >();
+         
+         while ( resultSet.next() )
+         {
+            results.add ( new Bands(
+                    resultSet.getInt("band_id"),
+                    resultSet.getString("band_naam"),
+                    resultSet.getString("band_soortMuziek"),
+                    resultSet.getString("band_url")));
+               
+         } // end while
+      } // end try
+      catch ( SQLException sqlException )
+      {
+         sqlException.printStackTrace();         
+         throw sqlException;
+      } // end catch
+      finally
+      {
+         try 
+         {
+            resultSet.close();
+         } // end try
+         catch ( SQLException sqlException )
+         {
+            sqlException.printStackTrace();         
+            close();
+            throw sqlException;
+         } // end catch
+      } // end finally
+      
+    return results;
+   }
+   public List < Bands > ophalenAlleBands() throws Exception{
+       
+       List< Bands > results = null;
+       ResultSet resultSet = null;
+        
+      try 
+      {
+         // executeQuery returns ResultSet containing matching entries
+        
+         resultSet = ophalenAlleBands.executeQuery(); 
            
          results = new ArrayList< Bands >();
          

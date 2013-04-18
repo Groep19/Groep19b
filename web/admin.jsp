@@ -58,6 +58,7 @@ image3.src="Afbeeldingen/festival3.jpg"
 
 </head>
 <body>
+    
 <div class="row">
     <header>
         <div class="logo left"><img src="Afbeeldingen/logo2b.PNG" align="left">
@@ -109,18 +110,56 @@ image3.src="Afbeeldingen/festival3.jpg"
     
     <div class="content col_12 col">
         <article>
+            <%@page import="java.util.List"%>
+                          <%@page import="connectie.Connectie"%>
+                          <%@page import="connectie.Bands"%>
+        <%
+         int current = 1;
+         int max= 0;
+            if(request.getParameter("hidden") != null) {
+                current = Integer.parseInt(request.getParameter("hidden"));
+            }
+            if(current < 0){
+                current = 0;
+            }
+            
+          Bands b = new Bands();
+       List < Bands > bands;
+    
+       Connectie connectie = new Connectie();
+        bands = connectie.ophalenAlleBands();
+         max = bands.size();
+         if (current == bands.size()){
+             current = 0;
+         }
+       try{
+        
+       bands = connectie.ophalenAlleBands();
+             
+             }
+       catch(Exception e){
+       StackTraceElement [] a = e.getStackTrace();
+       for(int i =0;i<a.length; i++){
+       out.print(a[i]);
+       
+       }
+       
+       }
+        
+        %>
             <h1>Beheer bands</h1>
-            <form name="bands" action="adminVerwerk.jsp">
+            <form name="form1" action="admin.jsp">
                 
                     Naam:
-                    <input type="text" name="naam" value="" /><br/>
+                    <input type="text" name="naam" value="<%=bands.get(current).getBand_naam()%>" /><br/>
                     Genre:
-                    <input type="text" name="genre" value="" /><br/>
+                    <input type="text" name="genre" value="<%=bands.get(current).getBand_soortMuziek()%>" /><br/>
                
                     Website:
-                   <input type="text" name="website" value="" /><br/>
-                   <input type="submit" value="<" name="vorige" />
-                  <input type="submit" value=">" name="volgende" /><br/>
+                   <input type="text" name="website" value="<%=bands.get(current).getBand_url()%>" /><br/>
+                  <INPUT TYPE="HIDDEN" NAME="hidden" VALUE="<%= current %>">
+                   <input type="submit" value="<" name="vorige" ONCLICK="movePrevious()"  />
+                  <input type="submit" value=">" name="volgende" ONCLICK="moveNext()"  /><br/>
                  <input type="submit" value="toevoegen" name="toevoegen" />
                 <input type="submit" value="wijzigen" name="wijzigen" />
                 <input type="submit" value="verwijderen" name="verwijderen" />
@@ -129,7 +168,24 @@ image3.src="Afbeeldingen/festival3.jpg"
             
                   </article>  
     </div><!-- end content -->
-    
+    <SCRIPT LANGUAGE="JavaScript">
+            <!--
+            function moveNext()
+            {
+                var counter = 0;
+                counter = parseInt(document.form1.hidden.value) + 1;
+                document.form1.hidden.value = counter;
+                form1.submit();
+            }    
+            function movePrevious()
+            {
+                var counter = 0;
+                counter = parseInt(document.form1.hidden.value) - 1;
+                document.form1.hidden.value = counter;
+                form1.submit();
+            }    
+            // --> 
+        </SCRIPT>
     
   <div class="clear" style="height:10px; border-bottom:1px solid #ccc;"></div>
 </div><!-- end wrap -->

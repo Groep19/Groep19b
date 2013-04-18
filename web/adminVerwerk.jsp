@@ -110,14 +110,13 @@ image3.src="Afbeeldingen/festival3.jpg"
     <div class="content col_12 col">
         <article>
            <%
+              
 if (request.getParameter("toevoegen") != null){
     
     
 }
 if (request.getParameter("wijzigen")!= null){
-   String naam = request.getParameter("naam");
-   String genre = request.getParameter("genre");
-   String website = request.getParameter("website");
+   
     
    
 }
@@ -125,6 +124,7 @@ if (request.getParameter("verwijderen")!=null){
  
   
 }
+
         %>
             
             
