@@ -117,7 +117,6 @@ image3.src="Afbeeldingen/festival3.jpg"
                           <%@page import="connectie.Connectie"%>
                           <%@page import="connectie.Bands"%>
         <%
-       Bands b = new Bands();
        List < Bands > resultaat;
        Connectie connectie = new Connectie();
        try{
@@ -125,9 +124,7 @@ image3.src="Afbeeldingen/festival3.jpg"
        
        out.print("Muziekgenre: " + resultaat.get(0).getBand_soortMuziek());
        out.print("</br>");
-     out.print("Website: &#09; test");
-     
-      
+     out.print("Website: ");
        %> <a href="<%resultaat.get(0).getBand_url();%>"><%out.print(resultaat.get(0).getBand_url());%> </a>
        <%
        

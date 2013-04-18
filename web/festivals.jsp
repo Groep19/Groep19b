@@ -110,8 +110,47 @@ image3.src="Afbeeldingen/festival3.jpg"
     
     <div class="content col_12 col">
         <article>
-            <h1>Titel</h1>
-            <p>Hier komt de tekst over het onderwerp.</p>
+            <h1>Welkom op de Festival pagina.</h1>
+            
+             <%@page import="java.util.List"%>
+             <%@page import="connectie.Connectie"%>
+             <%@page import="connectie.Festivals"%>
+             
+            <%
+            List < Festivals > resultaat;
+            
+            Connectie connectie = new Connectie();
+            
+            try{
+                resultaat = connectie.ophalenAlleFestivals();
+                for (int i=0;i<resultaat.size();i++){
+                
+                out.println(resultaat.get(i).getFest_id());
+                out.println(resultaat.get(i).getFest_naam());
+                out.println(resultaat.get(i).getFest_locatie());
+                out.println(resultaat.get(i).getFest_datum());
+                out.println(resultaat.get(i).getFest_duur());
+                %></br><%
+                               }
+               
+                
+            } catch (Exception e){
+       StackTraceElement [] a = e.getStackTrace();
+       for(int i =0;i<a.length; i++){
+       out.print(a[i]);
+       
+       }
+              }
+                    
+           
+            
+            
+            
+            
+            
+            
+            
+            %>
         </article>  
     </div><!-- end content -->
     

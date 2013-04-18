@@ -27,6 +27,7 @@ public class Connectie
    private Connection connection = null; // manages connection
    private PreparedStatement ophalenGebruikers = null; 
    private PreparedStatement ophalenBands = null;
+   private PreparedStatement ophalenAlleFestivals = null;
    
    // constructor
    public Connectie()
@@ -42,11 +43,14 @@ public class Connectie
          
          ophalenBands = 
             connection.prepareStatement ("SELECT * from bands where band_naam = ?");
-                      		 
+                      		
+         ophalenAlleFestivals = 
+            connection.prepareStatement ( "SELECT fest_id, fest_naam, fest_locatie, fest_datum , fest_duur FROM festivals");
+         
       } // end try
       catch ( SQLException sqlException )
       {
-         sqlException.printStackTrace();
+         System.out.println(sqlException.getMessage());
          System.exit( 1 );
       } // end catch
    } // end PersonQueries constructor
@@ -134,6 +138,55 @@ public class Connectie
       
     return results;
    }
+   
+   public List < Festivals > ophalenAlleFestivals() throws Exception{
+        List < Festivals > results = null;
+       ResultSet resultSet = null;
+               
+      try 
+      {
+         // executeQuery returns ResultSet containing matching entries
+         
+         resultSet = ophalenAlleFestivals.executeQuery(); 
+           
+         results = new ArrayList< Festivals >();
+         
+         while ( resultSet.next() )
+         {
+            results.add ( new Festivals(
+                   resultSet.getInt("fest_id"),
+                    resultSet.getString("fest_naam"),
+                   resultSet.getString("fest_locatie"),
+                    resultSet.getDate("fest_datum"),
+                   resultSet.getInt("fest_duur")));
+                   
+                   
+               
+         } // end while
+      } // end try
+      catch ( SQLException sqlException )
+      {
+         sqlException.printStackTrace();         
+         throw sqlException;
+      } // end catch
+      finally
+      {
+         try 
+         {
+            resultSet.close();
+         } // end try
+         catch ( SQLException sqlException )
+         {
+            sqlException.printStackTrace();         
+            close();
+            throw sqlException;
+         } // end catch
+      } // end finally
+      
+    return results;
+       
+       
+   } 
   
    // close the database connection
    public void close()
