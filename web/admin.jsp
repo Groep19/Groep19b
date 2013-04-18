@@ -115,7 +115,7 @@ image3.src="Afbeeldingen/festival3.jpg"
                           <%@page import="connectie.Connectie"%>
                           <%@page import="connectie.Bands"%>
         <%
-         int current = 1;
+         int current = 0;
          int max= 0;
             if(request.getParameter("hidden") != null) {
                 current = Integer.parseInt(request.getParameter("hidden"));

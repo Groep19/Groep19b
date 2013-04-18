@@ -28,6 +28,7 @@ public class Connectie
    private PreparedStatement ophalenGebruikers = null; 
    private PreparedStatement ophalenBands = null;
    private PreparedStatement ophalenAlleBands = null;
+   private PreparedStatement ophalenAlleFestivals = null;
    
    
    // constructor
@@ -47,6 +48,8 @@ public class Connectie
                       		
          ophalenAlleFestivals = 
             connection.prepareStatement ( "SELECT fest_id, fest_naam, fest_locatie, fest_datum , fest_duur FROM festivals");
+         ophalenAlleBands =
+                 connection.prepareStatement("Select * from bands");
          
       } // end try
       catch ( SQLException sqlException )
@@ -188,7 +191,50 @@ public class Connectie
        
        
    } 
-  
+   public List < Bands > ophalenAlleBands() throws Exception{
+       
+       List< Bands > results = null;
+       ResultSet resultSet = null;
+        
+      try 
+      {
+         // executeQuery returns ResultSet containing matching entries
+          
+         resultSet = ophalenAlleBands.executeQuery(); 
+           
+         results = new ArrayList< Bands >();
+         
+         while ( resultSet.next() )
+         {
+            results.add ( new Bands(
+                    resultSet.getInt("band_id"),
+                    resultSet.getString("band_naam"),
+                    resultSet.getString("band_soortMuziek"),
+                    resultSet.getString("band_url")));
+               
+         } // end while
+      } // end try
+      catch ( SQLException sqlException )
+      {
+         sqlException.printStackTrace();         
+         throw sqlException;
+      } // end catch
+      finally
+      {
+         try 
+         {
+            resultSet.close();
+         } // end try
+         catch ( SQLException sqlException )
+         {
+            sqlException.printStackTrace();         
+            close();
+            throw sqlException;
+         } // end catch
+      } // end finally
+      
+    return results;
+   }
    // close the database connection
    public void close()
    {
