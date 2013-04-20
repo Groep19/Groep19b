@@ -15,6 +15,7 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.List;
 import java.util.ArrayList;
+import java.sql.Date;
 
 public class Connectie
 {
@@ -28,7 +29,8 @@ public class Connectie
    private PreparedStatement ophalenGebruikers = null; 
    private PreparedStatement ophalenBands = null;
    private PreparedStatement ophalenAlleBands = null;
-   private PreparedStatement ophalenAlleFestivals = null;
+   private PreparedStatement ophalenAlleFestivals = null; 
+   private PreparedStatement ophalenInfoFestivals = null;
    
    
    // constructor
@@ -48,8 +50,18 @@ public class Connectie
                       		
          ophalenAlleFestivals = 
             connection.prepareStatement ( "SELECT fest_id, fest_naam, fest_locatie, fest_datum , fest_duur FROM festivals");
+         
          ophalenAlleBands =
                  connection.prepareStatement("Select * from bands");
+         
+         ophalenInfoFestivals = 
+                 connection.prepareStatement("SELECT festivals.fest_naam, bands.band_naam, podia.pod_omschr, b.datum, b.uur " +
+"from festivals, bands, bandsperfestival b, podia " +
+"where b.fest_id = festivals.fest_id AND " +
+"b.band_id = bands.band_id AND " +
+"b.pod_id = podia.pod_id AND " +
+"festivals.fest_naam = ? " + 
+                 "ORDER BY `datum` ASC, 'uur' ASC");
          
       } // end try
       catch ( SQLException sqlException )
@@ -247,4 +259,52 @@ public class Connectie
          sqlException.printStackTrace();
       } // end catch
    } // end method close
+   
+   public List < Festivals > ophalenInfoFestivals(String fest_naam) throws Exception{
+        List< Festivals > results = null;
+       ResultSet resultSet = null;
+        
+      try 
+      {
+         // executeQuery returns ResultSet containing matching entries
+          ophalenInfoFestivals.setString(1, fest_naam);
+         resultSet = ophalenInfoFestivals.executeQuery(); 
+           
+         results = new ArrayList< Festivals >();
+         
+         while ( resultSet.next() )
+         {
+            results.add ( new Festivals(
+                    resultSet.getString("fest_naam"),
+                    resultSet.getDate("datum"),
+                    
+                    resultSet.getString("band_naam"),
+                    resultSet.getString("pod_omschr"),
+                    resultSet.getTime("uur")));
+               
+         } // end while
+      } // end try
+      catch ( SQLException sqlException )
+      {
+         sqlException.printStackTrace();         
+         throw sqlException;
+      } // end catch
+      finally
+      {
+         try 
+         {
+            resultSet.close();
+         } // end try
+         catch ( SQLException sqlException )
+         {
+            sqlException.printStackTrace();         
+            close();
+            throw sqlException;
+         } // end catch
+      } // end finally
+      
+    return results;
+       
+       
+   } 
 } // end class PersonQueries

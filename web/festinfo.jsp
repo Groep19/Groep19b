@@ -6,7 +6,6 @@
 --%>
 
 
-<%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -74,6 +73,7 @@ image3.src="Afbeeldingen/festival3.jpg"
                 <li class="active"><a href="./festivals.jsp">Festival</a></li>
                 <li><a href="./bands.jsp">Bands</a></li>
                 <li><a href="./locatie.jsp">Locatie</a></li>
+                <li><a href="./prijzen.xhtml">Prijzen</a></li>
                 <logonknop><li><a href="./login.jsp">Login</a></li></logonknop>
             </ul>
             
@@ -110,57 +110,45 @@ image3.src="Afbeeldingen/festival3.jpg"
     
     <div class="content col_12 col">
         <article>
-            <h1>Welkom op de Festival pagina.</h1>
-            
-             <%@page import="java.util.List"%>
-             <%@page import="connectie.Connectie"%>
-             <%@page import="connectie.Festivals"%>
-             <table>
-                 <tr>
-                     <td width=20"><b><u>ID</u></b></td>
-                     <td width=200"><b><u>Naam</u></b></td>
-                     <td width=200"><b><u>Locatie</u></b></td>
-                     <td width=100"><b><u>Datum</u></b></td>
-                     <td width=20"><b><u>Duur</u></b></td>          
-                 </tr>
-            <%
-            List < Festivals > resultaat;
-            
-            Connectie connectie = new Connectie();
-            
-            try{
-                resultaat = connectie.ophalenAlleFestivals();
-                for (int i=0;i<resultaat.size();i++){
-                %><tr> <%
-                %><td><%out.println(resultaat.get(i).getFest_id());%></td><%
-                %><td><a href="./festinfo.jsp?fest_naam=<%=resultaat.get(i).getFest_naam()%>"><%out.println(resultaat.get(i).getFest_naam());%></a></td><%
-                %><td><%out.println(resultaat.get(i).getFest_locatie());%></td><%
-                %><td><%out.println(resultaat.get(i).getFest_datum());%></td><%
-                %><td><%out.println(resultaat.get(i).getFest_duur());%></td><%
-                %></tr><%
-                               }
-               
-                
-            } catch (Exception e){
+            <h1><%=request.getParameter("fest_naam")%></h1>
+            <table>
+                          <%@page import="java.util.List"%>
+                          <%@page import="connectie.Connectie"%>
+                          <%@page import="connectie.Festivals"%>
+        <%
+       List < Festivals > resultaat;
+       Connectie connectie = new Connectie();
+       try{
+       resultaat = connectie.ophalenInfoFestivals(request.getParameter("fest_naam"));
+       
+        for (int i=0;i<resultaat.size();i++){
+       
+       
+       %><tr><td><b><u>Band:</u></b></td><td><%out.print(resultaat.get(i).getBand_naam());%></td></tr><%
+       %><tr><td><b><u>Datum:</u></b></td><td><%out.print(resultaat.get(i).getDatum());%></td></tr><%
+       %><tr><td><b><u>Uur:</u></b></td><td><%out.print(resultaat.get(i).getUur());%></td></tr><%
+       %><tr><td><b><u>Podium:</u></b></td><td><%out.print(resultaat.get(i).getPod_omschr());%></td></tr><%
+       %><tr><td></br></br></td></tr><%
+       
+        }
+            }
+       catch(Exception e){
        StackTraceElement [] a = e.getStackTrace();
        for(int i =0;i<a.length; i++){
        out.print(a[i]);
        
        }
-              }
-                    
-           
-            
-            
-            
-            
-            
-            
-            
-            %>
-             </table>
+       
+       }
+        
+         
+    %>
+       </table>
         </article>  
     </div><!-- end content -->
+    
+    
+    
     
     
   <div class="clear" style="height:10px; border-bottom:1px solid #ccc;"></div>
@@ -175,4 +163,3 @@ image3.src="Afbeeldingen/festival3.jpg"
 </footer>
 </body>
 </html>
-
