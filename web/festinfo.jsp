@@ -4,6 +4,8 @@
     Author     : Maikel Vanmuysen, Tim Telen, Sven Haenen, Ruben Thonissen, Robin Verdingh
                : Project Groep 19
 --%>
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -68,9 +70,9 @@ image3.src="Afbeeldingen/festival3.jpg"
         <nav>
         	<ul>
             	<li><a href="./index.jsp">Home</a></li>
-                <li><a href="./festivals.jsp">Festival</a></li>
+                <li class="active"><a href="./festivals.jsp">Festival</a></li>
                 <li><a href="./bands.jsp">Bands</a></li>
-                <li class="active"><a href="./locatie.jsp">Locatie</a></li>
+                <li><a href="./locatie.jsp">Locatie</a></li>
                 <li><a href="./prijzen.xhtml">Prijzen</a></li>
                 <logonknop><li><a href="./login.jsp">Login</a></li></logonknop>
             </ul>
@@ -108,10 +110,45 @@ image3.src="Afbeeldingen/festival3.jpg"
     
     <div class="content col_12 col">
         <article>
-            <h1>Titel</h1>
-            <p>Hier komt de tekst over het onderwerp.</p>
+            <h1><%=request.getParameter("fest_naam")%></h1>
+            <table>
+                          <%@page import="java.util.List"%>
+                          <%@page import="connectie.Connectie"%>
+                          <%@page import="connectie.Festivals"%>
+        <%
+       List < Festivals > resultaat;
+       Connectie connectie = new Connectie();
+       try{
+       resultaat = connectie.ophalenInfoFestivals(request.getParameter("fest_naam"));
+       
+        for (int i=0;i<resultaat.size();i++){
+       
+       
+       %><tr><td><b><u>Band:</u></b></td><td><%out.print(resultaat.get(i).getBand_naam());%></td></tr><%
+       %><tr><td><b><u>Datum:</u></b></td><td><%out.print(resultaat.get(i).getDatum());%></td></tr><%
+       %><tr><td><b><u>Uur:</u></b></td><td><%out.print(resultaat.get(i).getUur());%></td></tr><%
+       %><tr><td><b><u>Podium:</u></b></td><td><%out.print(resultaat.get(i).getPod_omschr());%></td></tr><%
+       %><tr><td></br></br></td></tr><%
+       
+        }
+            }
+       catch(Exception e){
+       StackTraceElement [] a = e.getStackTrace();
+       for(int i =0;i<a.length; i++){
+       out.print(a[i]);
+       
+       }
+       
+       }
+        
+         
+    %>
+       </table>
         </article>  
     </div><!-- end content -->
+    
+    
+    
     
     
   <div class="clear" style="height:10px; border-bottom:1px solid #ccc;"></div>

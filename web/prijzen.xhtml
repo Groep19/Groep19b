@@ -1,28 +1,15 @@
-<%-- 
-    Document   : index
-    Created on : Mar 21, 2013, 3:52:33 PM
-    Author     : Maikel Vanmuysen, Tim Telen, Sven Haenen, Ruben Thonissen, Robin Verdingh
-               : Project Groep 19
---%>
-
-
-<!DOCTYPE html>
-<html lang="en">
-<head>
-<meta charset=utf-8>
-<title>FestivalSite Groep 19</title>
-<meta name="keywords" content="keywords, here" />
-<meta name="description" content="your description here" />
-
-<script src="js/modernizr-1.1.min.js"></script><!-- this is the javascript allowing html5 to run in older browsers -->
-
-
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html">
+    <h:head>
+        <title>Prijzen</title>
 <link rel="stylesheet" type="text/css" href="css/css3.css" media="screen" />
 <link rel="stylesheet" type="text/css" href="css/general.css" media="screen" />
 <link rel="stylesheet" type="text/css" href="css/grid.css" media="screen" />
 <!-- @font-face provided by google, works on 97% of browsers -->
-<link href='http://fonts.googleapis.com/css?family=Yanone+Kaffeesatz' rel='stylesheet' type='text/css'>
-
+<link href='http://fonts.googleapis.com/css?family=Yanone+Kaffeesatz' rel='stylesheet' type='text/css'/>
+<script src="js/modernizr-1.1.min.js"></script><!-- this is the javascript allowing html5 to run in older browsers -->
 <style>
 /* Feel free to remove these styles, they are for demo page */
 .logo, h1, h2, h3, h4, h5, header { font-family: 'Yanone Kaffeesatz', arial, serif; font-size: large; }
@@ -43,7 +30,6 @@ aside {min-height:400px;}
 
 footer { font-size:.8em; } 
 </style>
-
 <script language="JavaScript1.1">
 <!--
 var image1=new Image()
@@ -54,13 +40,11 @@ var image3=new Image()
 image3.src="Afbeeldingen/festival3.jpg"
 //-->
 </script>
-
-
-</head>
-<body>
-<div class="row">
+    </h:head>   
+    <h:body>
+        <div class="row">
     <header>
-        <div class="logo left"><img src="Afbeeldingen/logo2b.PNG" align="left">
+        <div class="logo left"><img src="Afbeeldingen/logo2b.PNG" align="left"/>
              Festivals
         </div>
       
@@ -69,10 +53,11 @@ image3.src="Afbeeldingen/festival3.jpg"
         
         <nav>
         	<ul>
-            	<li class="active"><a href="./index.jsp">Home</a></li>
+            	<li><a href="./index.jsp">Home</a></li>
                 <li><a href="./festivals.jsp">Festival</a></li>
                 <li><a href="./bands.jsp">Bands</a></li>
                 <li><a href="./locatie.jsp">Locatie</a></li>
+                <li class="active"><a href="./prijzen.xhtml">Prijzen</a></li>
                 <logonknop><li><a href="./login.jsp">Login</a></li></logonknop>
             </ul>
             
@@ -81,8 +66,9 @@ image3.src="Afbeeldingen/festival3.jpg"
     <div class="clear"></div>
     <aside class="col_4 col box_shadow shadow">
         <p style="padding:5px;">
-            <img src="Afbeeldingen/festival1.jpg" name="slide" width=210 height=400>
-                    <script>
+            
+                  <img src="Afbeeldingen/festival1.jpg" name="slide" width="210" height="400">
+              <script>
                     <!--
                     //variable that will increment through the images
                     var step=1
@@ -101,10 +87,8 @@ image3.src="Afbeeldingen/festival3.jpg"
                     slideit()
                     //-->
                     </script>
-            
-            
-            
-        </p> <%-- Hiertussen komt de tekst voor in de box links in het scherm te zetten. --%>
+                      </img>
+        </p>
     </aside>
     
     <div class="content col_12 col">
@@ -125,5 +109,6 @@ image3.src="Afbeeldingen/festival3.jpg"
     Groep 19 : Maikel Vanmuysen, Tim Telen, Sven Haenen, Ruben Thonissen, Robin Verdingh
     </section>
 </footer>
-</body>
+    </h:body>
 </html>
+

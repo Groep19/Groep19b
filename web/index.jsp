@@ -23,26 +23,26 @@
 <!-- @font-face provided by google, works on 97% of browsers -->
 <link href='http://fonts.googleapis.com/css?family=Yanone+Kaffeesatz' rel='stylesheet' type='text/css'>
 
-<style>
-/* Feel free to remove these styles, they are for demo page */
-.logo, h1, h2, h3, h4, h5, header { font-family: 'Yanone Kaffeesatz', arial, serif; font-size: large; }
+    <style>
+    /* Feel free to remove these styles, they are for demo page */
+    .logo, h1, h2, h3, h4, h5, header { font-family: 'Yanone Kaffeesatz', arial, serif; font-size: large; }
 
 
-header {height:175px; position:relative; margin-bottom:10px; border-bottom:#4B88BE; border-bottom-style: solid; border-bottom-width: 8px;}
-	header .logo {font-size:5em; height:100px; padding-top:22px; font-weight:700; text-shadow:5px 5px 10px #4B88BE; color:#EB5A1E; filter: Shadow(Color=#4B88BE, Direction=135, Strength=13);}
-	header .statement {width:20%; text-align:right; padding-top:100px;}
-header nav { background-color:#EB5A1E; color:#fff; height:28px;   }
-	nav ul {list-style:none;}
-	nav ul li {float:left; margin-left:5px;}
-	nav ul li a {display:block; color:#fff; text-decoration:none; padding:2px 8px; margin-top:3px;  
-					-moz-border-radius-topleft: 5px; -webkit-border-top-left-radius: 5px; -moz-border-radius-topright: 5px; -webkit-border-top-right-radius: 5px;}
-	nav ul li a:hover, nav ul li.active a {background-color:#4B88BE; color:#000;}
-        logonknop {float: right; margin-right: 5px;}        
+    header {height:175px; position:relative; margin-bottom:10px; border-bottom:#4B88BE; border-bottom-style: solid; border-bottom-width: 8px;}
+            header .logo {font-size:5em; height:100px; padding-top:22px; font-weight:700; text-shadow:5px 5px 10px #4B88BE; color:#EB5A1E; filter: Shadow(Color=#4B88BE, Direction=135, Strength=13);}
+            header .statement {width:20%; text-align:right; padding-top:100px;}
+    header nav { background-color:#EB5A1E; color:#fff; height:28px;   }
+            nav ul {list-style:none;}
+            nav ul li {float:left; margin-left:5px;}
+            nav ul li a {display:block; color:#fff; text-decoration:none; padding:2px 8px; margin-top:3px;  
+                                            -moz-border-radius-topleft: 5px; -webkit-border-top-left-radius: 5px; -moz-border-radius-topright: 5px; -webkit-border-top-right-radius: 5px;}
+            nav ul li a:hover, nav ul li.active a {background-color:#4B88BE; color:#000;}
+            logonknop {float: right; margin-right: 5px;}        
 
-aside {min-height:400px;}	
+    aside {min-height:400px;}	
 
-footer { font-size:.8em; } 
-</style>
+    footer { font-size:.8em; } 
+    </style>
 
 <script language="JavaScript1.1">
 <!--
@@ -73,6 +73,7 @@ image3.src="Afbeeldingen/festival3.jpg"
                 <li><a href="./festivals.jsp">Festival</a></li>
                 <li><a href="./bands.jsp">Bands</a></li>
                 <li><a href="./locatie.jsp">Locatie</a></li>
+                <li><a href="./prijzen.xhtml">Prijzen</a></li>
                 <logonknop><li><a href="./login.jsp">Login</a></li></logonknop>
             </ul>
             

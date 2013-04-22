@@ -13,7 +13,7 @@
 <meta name="description" content="your description here" />
 
 <script src="js/modernizr-1.1.min.js"></script><!-- this is the javascript allowing html5 to run in older browsers -->
-
+   
 
 <link rel="stylesheet" type="text/css" href="css/css3.css" media="screen" />
 <link rel="stylesheet" type="text/css" href="css/general.css" media="screen" />
@@ -77,6 +77,7 @@ image3.src="Afbeeldingen/festival3.jpg"
                 <li><a href="./festivals.jsp">Festival</a></li>
                 <li><a href="./bands.jsp">Bands</a></li>
                 <li><a href="./locatie.jsp">Locatie</a></li>
+                <li><a href="./prijzen.xhtml">Prijzen</a></li>
                 <logonknop><li class="active"><a href="./login.jsp">Login</a></li></logonknop>
             </ul>
             
@@ -126,6 +127,8 @@ image3.src="Afbeeldingen/festival3.jpg"
                 <input type="password" name="pwd" required="required" class="box_shadow">
               </div>
                 <button type="submit" value="Inloggen">Inloggen</button>
+                
+              
                 </fieldset>
             </form>
         </article>  

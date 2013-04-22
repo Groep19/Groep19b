@@ -110,8 +110,55 @@ image3.src="Afbeeldingen/festival3.jpg"
     
     <div class="content col_12 col">
         <article>
-            <h1>Titel</h1>
-            <p>Hier komt de tekst over het onderwerp.</p>
+            <h1>Welkom op de Festival pagina.</h1>
+            
+             <%@page import="java.util.List"%>
+             <%@page import="connectie.Connectie"%>
+             <%@page import="connectie.Festivals"%>
+             <table>
+                 <tr>
+                     <td width=20"><b><u>ID</u></b></td>
+                     <td width=200"><b><u>Naam</u></b></td>
+                     <td width=200"><b><u>Locatie</u></b></td>
+                     <td width=100"><b><u>Datum</u></b></td>
+                     <td width=20"><b><u>Duur</u></b></td>          
+                 </tr>
+            <%
+            List < Festivals > resultaat;
+            
+            Connectie connectie = new Connectie();
+            
+            try{
+                resultaat = connectie.ophalenAlleFestivals();
+                for (int i=0;i<resultaat.size();i++){
+                %><tr> <%
+                %><td><%out.println(resultaat.get(i).getFest_id());%></td><%
+                %><td><a href="./festinfo.jsp?fest_naam=<%=resultaat.get(i).getFest_naam()%>"><%out.println(resultaat.get(i).getFest_naam());%></a></td><%
+                %><td><%out.println(resultaat.get(i).getFest_locatie());%></td><%
+                %><td><%out.println(resultaat.get(i).getFest_datum());%></td><%
+                %><td><%out.println(resultaat.get(i).getFest_duur());%></td><%
+                %></tr><%
+                               }
+               
+                
+            } catch (Exception e){
+       StackTraceElement [] a = e.getStackTrace();
+       for(int i =0;i<a.length; i++){
+       out.print(a[i]);
+       
+       }
+              }
+                    
+           
+            
+            
+            
+            
+            
+            
+            
+            %>
+             </table>
         </article>  
     </div><!-- end content -->
     
